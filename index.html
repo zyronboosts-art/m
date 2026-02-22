@@ -1,432 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahjabeen Studio | Home</title>
-    <!-- Fonts & Icons -->
+    <title>Mahjabeen Studio | Premium Bridal & Formal Wear</title>
+    <meta name="description"
+        content="Mahjabeen Studio offers premium Pakistani bridal, valima, and formal wear. Shop our elegant collections for your special moments.">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* ---------- RESET & VARIABLES ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: #fff;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* ---------- COLOR PALETTE ---------- */
-        :root {
-            --beige: #f8f0e7;
-            --gold: #d4af37;
-            --blush: #f9e0e0;
-            --white: #ffffff;
-            --soft-pink: #fadadd;
-            --text-dark: #2e2e2e;
-        }
-        /* ---------- HEADER ---------- */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-        .logo span {
-            color: var(--gold);
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: var(--gold);
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* ---------- BUTTONS ---------- */
-        .btn {
-            display: inline-block;
-            background: var(--gold);
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-wa {
-            background: #25D366;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 30px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .btn-wa i {
-            font-size: 16px;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-        }
-        /* ---------- HERO ---------- */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://via.placeholder.com/1600x800/f9e0e0/cccccc?text=Bridal+Hero') center/cover no-repeat;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-content h1 {
-            font-size: 56px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        .hero-content p {
-            font-size: 20px;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-        /* ---------- CATEGORY SECTION ---------- */
-        .section {
-            padding: 70px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            margin-bottom: 50px;
-            color: var(--text-dark);
-        }
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .category-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .category-card img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .category-card:hover img {
-            transform: scale(1.05);
-        }
-        .category-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.9);
-            padding: 20px;
-            text-align: center;
-        }
-        .category-overlay h3 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        /* ---------- FEATURED PRODUCTS ---------- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .product-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        .product-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-        .product-info {
-            padding: 20px;
-            text-align: center;
-        }
-        .product-info h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-        .product-price {
-            color: var(--gold);
-            font-weight: 600;
-            margin: 10px 0;
-        }
-        /* ---------- TRUST SECTION ---------- */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-            background: var(--beige);
-            padding: 50px;
-            border-radius: 10px;
-        }
-        .trust-item i {
-            font-size: 40px;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-        /* ---------- STICKY WHATSAPP ---------- */
-        .sticky-wa {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 999;
-            transition: transform 0.3s;
-            text-decoration: none;
-        }
-        .sticky-wa:hover {
-            transform: scale(1.1);
-        }
-        /* ---------- FOOTER ---------- */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: var(--gold);
-        }
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero-content h1 {
-                font-size: 36px;
-            }
-            .hero {
-                height: 60vh;
-            }
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- Sticky WhatsApp -->
-    <a href="https://wa.me/923001234567?text=Hello%20Mahjabeen%20Studio%2C%20I%27m%20interested%20in%20your%20dresses." class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- Header -->
-    <header>
-        <div class="container header-inner">
-            <div class="logo"><a href="index.html">MAHJABEEN <span>STUDIO</span></a></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bridal.html">Bridal</a></li>
-                    <li><a href="valima.html">Valima</a></li>
-                    <li><a href="formal.html">Formal</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+<body>
+
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-container">
+                <!-- If logo image exists, it goes here, else fallback text -->
+                <div class="logo-text">Mahjabeen <span>Studio</span></div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="bridal.html">Bridal</a>
+                <a href="valima.html">Valima</a>
+                <a href="formal.html">Formal</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <a href="https://wa.me/923001234567" target="_blank" class="btn btn-outline"
+                style="display: flex; gap: 8px; align-items: center;">
+                <i class="fab fa-whatsapp"></i> Order Now
+            </a>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Premium Bridal & Formal Wear<br>for Your Special Moments</h1>
-            <p>Elegance stitched with perfection</p>
-            <a href="bridal.html" class="btn">Explore Collection</a>
+    <!-- Hero Section -->
+    <section class="hero js-hero-bg"
+        style="background-image: url('https://images.unsplash.com/photo-1566958769312-82cef41d19ef?q=80&w=2000&auto=format&fit=crop');">
+        <div class="hero-content fade-up">
+            <h1>Premium Bridal & Formal Wear for Your Special Moments</h1>
+            <p>Elevating elegance with exquisite craftsmanship and luxurious details.</p>
+            <a href="bridal.html" class="btn btn-primary">Explore Bridal Collection</a>
         </div>
     </section>
 
-    <!-- Shop by Category -->
-    <section class="container section">
-        <h2 class="section-title">Shop by Category</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <img src="https://via.placeholder.com/600x800/fadadd/cccccc?text=Bridal" alt="Bridal">
-                <div class="category-overlay">
-                    <h3>Bridal</h3>
-                    <a href="bridal.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Inquire</a>
+    <!-- Trust/Features Section -->
+    <section class="section section-bg-light">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+                <div class="fade-up" style="transition-delay: 0.1s;">
+                    <i class="fas fa-gem"
+                        style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem;">Premium Quality</h3>
+                    <p style="color: var(--text-muted);">Luxurious fabrics and intricate hand-embellishments.</p>
                 </div>
-            </div>
-            <div class="category-card">
-                <img src="https://via.placeholder.com/600x800/f9e0e0/cccccc?text=Valima" alt="Valima">
-                <div class="category-overlay">
-                    <h3>Valima</h3>
-                    <a href="valima.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Inquire</a>
+                <div class="fade-up" style="transition-delay: 0.2s;">
+                    <i class="fas fa-cut"
+                        style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem;">Custom Stitching</h3>
+                    <p style="color: var(--text-muted);">Tailored perfectly to your unique measurements.</p>
                 </div>
-            </div>
-            <div class="category-card">
-                <img src="https://via.placeholder.com/600x800/f8f0e7/cccccc?text=Formal" alt="Formal">
-                <div class="category-overlay">
-                    <h3>Formal</h3>
-                    <a href="formal.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Inquire</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Dresses -->
-    <section class="container section">
-        <h2 class="section-title">Featured Dresses</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/f9e0e0/cccccc?text=Rose+Gold+Gown" alt="Dress">
-                <div class="product-info">
-                    <h3>Rose Gold Gown</h3>
-                    <p class="product-price">PKR 45,000</p>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/fadadd/cccccc?text=Ivory+Valima" alt="Dress">
-                <div class="product-info">
-                    <h3>Ivory Valima</h3>
-                    <p class="product-price">PKR 38,500</p>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/f8f0e7/cccccc?text=Emerald+Formal" alt="Dress">
-                <div class="product-info">
-                    <h3>Emerald Formal</h3>
-                    <p class="product-price">PKR 22,000</p>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/f9e0e0/cccccc?text=Blush+Bridal" alt="Dress">
-                <div class="product-info">
-                    <h3>Blush Bridal</h3>
-                    <p class="product-price">PKR 65,000</p>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+                <div class="fade-up" style="transition-delay: 0.3s;">
+                    <i class="fas fa-shipping-fast"
+                        style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem;">Worldwide Delivery</h3>
+                    <p style="color: var(--text-muted);">Secure shipping across Pakistan and worldwide.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Section -->
-    <section class="container section">
-        <div class="trust-grid">
-            <div class="trust-item">
-                <i class="fas fa-gem"></i>
-                <h3>Premium Quality</h3>
-                <p>Authentic fabrics & intricate embroidery</p>
+    <!-- Shop By Category -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Shop By Category</h2>
             </div>
-            <div class="trust-item">
-                <i class="fas fa-cut"></i>
-                <h3>Expert Tailoring</h3>
-                <p>Perfect fit with custom stitching</p>
-            </div>
-            <div class="trust-item">
-                <i class="fas fa-truck"></i>
-                <h3>Reliable Delivery</h3>
-                <p>Secure shipping across Pakistan</p>
-            </div>
-            <div class="trust-item">
-                <i class="fas fa-headset"></i>
-                <h3>WhatsApp Support</h3>
-                <p>Instant order assistance</p>
+            <div class="grid">
+                <!-- Bridal Category Card -->
+                <a href="bridal.html" class="card fade-up">
+                    <img src="https://images.unsplash.com/photo-1594912959663-956dfa995fc1?q=80&w=800&auto=format&fit=crop"
+                        alt="Bridal Wear" class="card-img category-img bridal-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Bridal</h3>
+                        <p style="color: var(--text-muted);">For your most memorable day</p>
+                    </div>
+                </a>
+                <!-- Valima Category Card -->
+                <a href="valima.html" class="card fade-up" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop"
+                        alt="Valima Wear" class="card-img category-img valima-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Valima</h3>
+                        <p style="color: var(--text-muted);">Elegance for the evening</p>
+                    </div>
+                </a>
+                <!-- Formal Category Card -->
+                <a href="formal.html" class="card fade-up" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=800&auto=format&fit=crop"
+                        alt="Formal Wear" class="card-img category-img formal-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Formal</h3>
+                        <p style="color: var(--text-muted);">Stand out at any event</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/923001234567" target="_blank" class="sticky-whatsapp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo" style="color: white; margin-bottom: 20px;">MAHJABEEN STUDIO</div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-text" style="color: white; margin-bottom: 1rem;">Mahjabeen <span
+                            style="color: var(--crimson-red);">Studio</span></div>
+                    <p>Premium Pakistani women's fashion and bridal boutique, delivering elegance crafted with
+                        perfection.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul style="color: #ccc; line-height: 2;">
+                        <li><a href="bridal.html">Bridal Collection</a></li>
+                        <li><a href="valima.html">Valima Collection</a></li>
+                        <li><a href="formal.html">Formal Wear</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--gold-primary);"></i>
+                        Lahore, Pakistan</p>
+                    <p><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold-primary);"></i> +92 300
+                        1234567</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold-primary);"></i>
+                        info@mahjabeenstudio.com</p>
+                </div>
             </div>
-            <p style="margin-top: 20px;">&copy; 2026 Mahjabeen Studio. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mahjabeen Studio. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
     <script>
-        // Simple mobile menu toggle (demo only)
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            alert('Mobile menu would open here. For demo, please use desktop view.');
-        });
+        // Set hero background image dynamically after we get it
+        // The path will be updated once images are generated
     </script>
 </body>
+
 </html>
