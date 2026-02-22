@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ---------- RESET & TEMPLATE STRUCTURE ---------- */
+        /* ---------- RESET & VARIABLES ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +22,7 @@
             line-height: 1.6;
             background-color: #fff;
         }
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -32,29 +32,20 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* ---------- MAHJABEEN STUDIO COLOR PALETTE (from logo) ---------- */
+        /* ---------- COLOR PALETTE ---------- */
         :root {
-            --beige: #E6D5B8;      /* Soft beige from logo background feel */
-            --gold: #B88B4A;        /* Rich gold for accents */
-            --blush: #F8E0E0;       /* Soft pink for feminine touch */
-            --white: #FFFFFF;
-            --light-beige: #F5EDE0; /* Very light beige for backgrounds */
-            --text-dark: #3A3A3A;
-            --text-light: #6B6B6B;
+            --beige: #f8f0e7;
+            --gold: #d4af37;
+            --blush: #f9e0e0;
+            --white: #ffffff;
+            --soft-pink: #fadadd;
+            --text-dark: #2e2e2e;
         }
-        /* ---------- HEADER (exact template style) ---------- */
-        .top-bar {
-            background: var(--beige);
-            color: var(--text-dark);
-            padding: 8px 0;
-            font-size: 14px;
-            text-align: center;
-            border-bottom: 1px solid var(--gold);
-        }
+        /* ---------- HEADER ---------- */
         header {
             background: var(--white);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -64,27 +55,15 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
+        .logo a {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--text-dark);
             text-decoration: none;
-            line-height: 1.2;
-            text-align: center;
-        }
-        .logo a {
-            color: var(--text-dark);
-            text-decoration: none;
+            letter-spacing: 2px;
         }
         .logo span {
-            color: var(--gold);
-            font-weight: 700;
-        }
-        .logo small {
-            display: block;
-            font-size: 12px;
-            letter-spacing: 3px;
             color: var(--gold);
         }
         nav ul {
@@ -98,22 +77,8 @@
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        nav a:hover, nav a.active {
-            color: var(--gold);
-        }
-        .header-icons {
-            display: flex;
-            gap: 20px;
-        }
-        .header-icons a {
-            color: var(--text-dark);
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        .header-icons a:hover {
+        nav a:hover {
             color: var(--gold);
         }
         .menu-toggle {
@@ -121,32 +86,18 @@
             font-size: 24px;
             cursor: pointer;
         }
-        /* ---------- BUTTONS (template style) ---------- */
+        /* ---------- BUTTONS ---------- */
         .btn {
             display: inline-block;
             background: var(--gold);
             color: white;
-            padding: 12px 30px;
+            padding: 10px 25px;
             text-decoration: none;
+            border-radius: 30px;
             font-weight: 500;
-            transition: all 0.3s;
-            border: 2px solid var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 14px;
-        }
-        .btn:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-        }
-        .btn-outline:hover {
-            background: var(--gold);
-            color: white;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
         }
         .btn-wa {
             background: #25D366;
@@ -159,101 +110,91 @@
             gap: 8px;
             font-size: 14px;
             font-weight: 500;
-            border: none;
         }
-        /* ---------- HERO (exact template style) ---------- */
+        .btn-wa i {
+            font-size: 16px;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+        /* ---------- HERO ---------- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://via.placeholder.com/1920x800/decbb7/ffffff?text=Mahjabeen+Studio+Bridal') center/cover no-repeat;
-            padding: 150px 0;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://via.placeholder.com/1600x800/f9e0e0/cccccc?text=Bridal+Hero') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
             text-align: center;
             color: white;
         }
         .hero-content h1 {
-            font-size: 72px;
+            font-size: 56px;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         .hero-content p {
-            font-size: 24px;
-            margin-bottom: 30px;
+            font-size: 20px;
+            margin-bottom: 25px;
             font-weight: 300;
-            letter-spacing: 1px;
         }
-        /* ---------- CATEGORY SECTION (template style) ---------- */
+        /* ---------- CATEGORY SECTION ---------- */
         .section {
-            padding: 80px 0;
+            padding: 70px 0;
         }
         .section-title {
             text-align: center;
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: var(--text-light);
+            font-size: 42px;
             margin-bottom: 50px;
-            font-weight: 300;
+            color: var(--text-dark);
         }
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         .category-card {
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .category-card img {
             width: 100%;
-            height: 450px;
+            height: 400px;
             object-fit: cover;
             transition: transform 0.5s;
         }
         .category-card:hover img {
             transform: scale(1.05);
         }
-        .category-card .category-info {
+        .category-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(255,255,255,0.95);
-            padding: 25px;
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
             text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.4s;
         }
-        .category-card:hover .category-info {
-            transform: translateY(0);
+        .category-overlay h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
         }
-        .category-info h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-        .category-info .btn {
-            padding: 8px 20px;
-            font-size: 14px;
-        }
-        /* ---------- FEATURED PRODUCTS (template style) ---------- */
+        /* ---------- FEATURED PRODUCTS ---------- */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
         .product-card {
             background: var(--white);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            transition: all 0.3s;
-            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
         .product-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transform: translateY(-5px);
         }
         .product-card img {
@@ -263,148 +204,31 @@
         }
         .product-info {
             padding: 20px;
+            text-align: center;
         }
         .product-info h3 {
             font-size: 20px;
             margin-bottom: 5px;
-            color: var(--text-dark);
-        }
-        .product-category {
-            color: var(--gold);
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         .product-price {
-            font-size: 18px;
-            color: var(--text-dark);
+            color: var(--gold);
             font-weight: 600;
             margin: 10px 0;
         }
-        .product-price span {
-            color: var(--gold);
-        }
-        /* ---------- SERVICE SECTION (template style) ---------- */
-        .service-grid {
+        /* ---------- TRUST SECTION ---------- */
+        .trust-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            background: var(--light-beige);
-            padding: 50px;
-            border-radius: 0;
-        }
-        .service-item {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
             text-align: center;
+            background: var(--beige);
+            padding: 50px;
+            border-radius: 10px;
         }
-        .service-item i {
+        .trust-item i {
             font-size: 40px;
             color: var(--gold);
             margin-bottom: 15px;
-        }
-        .service-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-        .service-item p {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-        /* ---------- WORK PROCESS (template style) ---------- */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .process-item {
-            text-align: center;
-            position: relative;
-        }
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: var(--beige);
-            color: var(--gold);
-            font-size: 24px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 2px solid var(--gold);
-        }
-        .process-item h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        /* ---------- TESTIMONIALS (template style) ---------- */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            background: var(--light-beige);
-            padding: 60px;
-        }
-        .testimonial-item {
-            background: white;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .testimonial-item p {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .testimonial-author h5 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-        /* ---------- BLOG (template style) ---------- */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .blog-card {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .blog-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .blog-info {
-            padding: 20px;
-        }
-        .blog-info h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .blog-info p {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .blog-link {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 0.5px;
         }
         /* ---------- STICKY WHATSAPP ---------- */
         .sticky-wa {
@@ -428,93 +252,50 @@
         .sticky-wa:hover {
             transform: scale(1.1);
         }
-        /* ---------- FOOTER (template style) ---------- */
+        /* ---------- FOOTER ---------- */
         footer {
             background: var(--text-dark);
             color: white;
-            padding: 60px 0 30px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-col h4 {
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        .footer-col a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-col a:hover {
-            color: var(--gold);
-        }
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            padding: 40px 0;
+            text-align: center;
         }
         .social-links a {
             color: white;
+            margin: 0 10px;
             font-size: 20px;
+            transition: color 0.3s;
         }
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #aaa;
-            font-size: 14px;
+        .social-links a:hover {
+            color: var(--gold);
         }
         /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 1024px) {
-            .product-grid { grid-template-columns: repeat(3, 1fr); }
-            .blog-grid { grid-template-columns: repeat(2, 1fr); }
-        }
         @media (max-width: 768px) {
-            nav ul { display: none; }
-            .menu-toggle { display: block; }
-            .category-grid { grid-template-columns: 1fr; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .service-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .blog-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-content h1 { font-size: 48px; }
+            nav ul {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .hero {
+                height: 60vh;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            Free Shipping on Orders Above PKR 10,000 | WhatsApp Orders Only
-        </div>
-    </div>
-
     <!-- Sticky WhatsApp -->
-    <a href="https://wa.me/923001234567?text=Hello%20Mahjabeen%20Studio" class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/923001234567?text=Hello%20Mahjabeen%20Studio%2C%20I%27m%20interested%20in%20your%20dresses." class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <!-- Header -->
     <header>
         <div class="container header-inner">
-            <div class="logo">
-                <a href="index.html">MAHJABEEN<br><span>STUDIO</span></a>
-                <small>BRIDAL & FORMAL WEAR</small>
-            </div>
+            <div class="logo"><a href="index.html">MAHJABEEN <span>STUDIO</span></a></div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="bridal.html">Bridal</a></li>
                     <li><a href="valima.html">Valima</a></li>
                     <li><a href="formal.html">Formal</a></li>
@@ -522,205 +303,108 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-icons">
-                <a href="#"><i class="far fa-heart"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
-            </div>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
-    <!-- Hero Section (exact template style) -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Exclusive Collection</h1>
-            <p>Premium Bridal & Formal Wear for Your Special Moments</p>
-            <a href="bridal.html" class="btn">Shop Now</a>
+            <h1>Premium Bridal & Formal Wear<br>for Your Special Moments</h1>
+            <p>Elegance stitched with perfection</p>
+            <a href="bridal.html" class="btn">Explore Collection</a>
         </div>
     </section>
 
-    <!-- Categories Section (exact template style) -->
+    <!-- Shop by Category -->
     <section class="container section">
-        <h2 class="section-title">Browse Top Category</h2>
-        <p class="section-subtitle">Explore our exquisite collections</p>
+        <h2 class="section-title">Shop by Category</h2>
         <div class="category-grid">
             <div class="category-card">
-                <img src="https://via.placeholder.com/600x800/decbb7/ffffff?text=Bridal" alt="Bridal">
-                <div class="category-info">
+                <img src="https://via.placeholder.com/600x800/fadadd/cccccc?text=Bridal" alt="Bridal">
+                <div class="category-overlay">
                     <h3>Bridal</h3>
-                    <a href="bridal.html" class="btn btn-outline">View Collection</a>
+                    <a href="bridal.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Inquire</a>
                 </div>
             </div>
             <div class="category-card">
-                <img src="https://via.placeholder.com/600x800/e6d5b8/ffffff?text=Valima" alt="Valima">
-                <div class="category-info">
+                <img src="https://via.placeholder.com/600x800/f9e0e0/cccccc?text=Valima" alt="Valima">
+                <div class="category-overlay">
                     <h3>Valima</h3>
-                    <a href="valima.html" class="btn btn-outline">View Collection</a>
+                    <a href="valima.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Inquire</a>
                 </div>
             </div>
             <div class="category-card">
-                <img src="https://via.placeholder.com/600x800/f5ede0/ffffff?text=Formal" alt="Formal">
-                <div class="category-info">
+                <img src="https://via.placeholder.com/600x800/f8f0e7/cccccc?text=Formal" alt="Formal">
+                <div class="category-overlay">
                     <h3>Formal</h3>
-                    <a href="formal.html" class="btn btn-outline">View Collection</a>
+                    <a href="formal.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Inquire</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature Products Section (exact template style) -->
+    <!-- Featured Dresses -->
     <section class="container section">
-        <h2 class="section-title">Our Features Collection</h2>
-        <p class="section-subtitle">Handpicked just for you</p>
+        <h2 class="section-title">Featured Dresses</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/f8e0e0/ffffff?text=Rose+Gold+Gown" alt="Product">
+                <img src="https://via.placeholder.com/400x500/f9e0e0/cccccc?text=Rose+Gold+Gown" alt="Dress">
                 <div class="product-info">
-                    <span class="product-category">Bridal</span>
                     <h3>Rose Gold Gown</h3>
-                    <div class="product-price">PKR <span>45,000</span></div>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 45,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/e6d5b8/ffffff?text=Ivory+Valima" alt="Product">
+                <img src="https://via.placeholder.com/400x500/fadadd/cccccc?text=Ivory+Valima" alt="Dress">
                 <div class="product-info">
-                    <span class="product-category">Valima</span>
                     <h3>Ivory Valima</h3>
-                    <div class="product-price">PKR <span>38,500</span></div>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 38,500</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/f5ede0/ffffff?text=Emerald+Formal" alt="Product">
+                <img src="https://via.placeholder.com/400x500/f8f0e7/cccccc?text=Emerald+Formal" alt="Dress">
                 <div class="product-info">
-                    <span class="product-category">Formal</span>
                     <h3>Emerald Formal</h3>
-                    <div class="product-price">PKR <span>22,000</span></div>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 22,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/decbb7/ffffff?text=Blush+Bridal" alt="Product">
+                <img src="https://via.placeholder.com/400x500/f9e0e0/cccccc?text=Blush+Bridal" alt="Dress">
                 <div class="product-info">
-                    <span class="product-category">Bridal</span>
                     <h3>Blush Bridal</h3>
-                    <div class="product-price">PKR <span>65,000</span></div>
-                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 65,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section (template style) -->
+    <!-- Trust Section -->
     <section class="container section">
-        <div class="service-grid">
-            <div class="service-item">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <i class="fas fa-gem"></i>
+                <h3>Premium Quality</h3>
+                <p>Authentic fabrics & intricate embroidery</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-cut"></i>
+                <h3>Expert Tailoring</h3>
+                <p>Perfect fit with custom stitching</p>
+            </div>
+            <div class="trust-item">
                 <i class="fas fa-truck"></i>
-                <h4>Free Shipping</h4>
-                <p>On orders over PKR 10,000</p>
+                <h3>Reliable Delivery</h3>
+                <p>Secure shipping across Pakistan</p>
             </div>
-            <div class="service-item">
+            <div class="trust-item">
                 <i class="fas fa-headset"></i>
-                <h4>Great Support 24/7</h4>
-                <p>Via WhatsApp & Instagram</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-undo-alt"></i>
-                <h4>Easy Returns</h4>
-                <p>7-day exchange policy</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-lock"></i>
-                <h4>Secure WhatsApp</h4>
-                <p>Safe & private ordering</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Process Section (template style) -->
-    <section class="container section">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Ordering is simple with WhatsApp</p>
-        <div class="process-grid">
-            <div class="process-item">
-                <div class="process-number">01</div>
-                <h4>Browse & Choose</h4>
-                <p>Explore our collections and select your favorite dress.</p>
-            </div>
-            <div class="process-item">
-                <div class="process-number">02</div>
-                <h4>Click WhatsApp</h4>
-                <p>Tap the WhatsApp button on any product.</p>
-            </div>
-            <div class="process-item">
-                <div class="process-number">03</div>
-                <h4>Confirm Details</h4>
-                <p>Share your size, customization, and address.</p>
-            </div>
-            <div class="process-item">
-                <div class="process-number">04</div>
-                <h4>Delivery</h4>
-                <p>We stitch and deliver your dream outfit.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section (template style) -->
-    <section class="container section">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-item">
-                <p>"Absolutely stunning work! The bridal lehenga exceeded my expectations. Every detail was perfect."</p>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/50x50/decbb7/ffffff?text=User" alt="Client">
-                    <div>
-                        <h5>Fatima Khan</h5>
-                        <span>Bridal Client</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <p>"The valima dress was elegant and fit like a glove. Highly recommend Mahjabeen Studio!"</p>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/50x50/e6d5b8/ffffff?text=User" alt="Client">
-                    <div>
-                        <h5>Sara Ahmed</h5>
-                        <span>Valima Client</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section (template style) -->
-    <section class="container section">
-        <h2 class="section-title">Our Blogs</h2>
-        <p class="section-subtitle">Latest from Mahjabeen Studio</p>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/400x300/decbb7/ffffff?text=Bridal+Trends" alt="Blog">
-                <div class="blog-info">
-                    <h4>2026 Bridal Trends</h4>
-                    <p>Discover the latest colors and embroidery styles for brides.</p>
-                    <a href="#" class="blog-link">Read More</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/400x300/e6d5b8/ffffff?text=Valima+Guide" alt="Blog">
-                <div class="blog-info">
-                    <h4>Valima Dress Guide</h4>
-                    <p>How to choose the perfect valima outfit.</p>
-                    <a href="#" class="blog-link">Read More</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/400x300/f5ede0/ffffff?text=Fabric+Care" alt="Blog">
-                <div class="blog-info">
-                    <h4>Caring for Your Lehenga</h4>
-                    <p>Tips to preserve your bridal wear.</p>
-                    <a href="#" class="blog-link">Read More</a>
-                </div>
+                <h3>WhatsApp Support</h3>
+                <p>Instant order assistance</p>
             </div>
         </div>
     </section>
@@ -728,49 +412,18 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Mahjabeen Studio</h4>
-                    <p>Premium bridal, valima, and formal wear for the modern Pakistani woman.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="bridal.html">Bridal</a></li>
-                        <li><a href="valima.html">Valima</a></li>
-                        <li><a href="formal.html">Formal</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fab fa-whatsapp"></i> +92 300 1234567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
-                        <li><i class="fas fa-envelope"></i> hello@mahjabeenstudio.com</li>
-                    </ul>
-                </div>
+            <div class="logo" style="color: white; margin-bottom: 20px;">MAHJABEEN STUDIO</div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="copyright">
-                &copy; 2026 Mahjabeen Studio. All rights reserved.
-            </div>
+            <p style="margin-top: 20px;">&copy; 2026 Mahjabeen Studio. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Simple mobile menu toggle (demo only)
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             alert('Mobile menu would open here. For demo, please use desktop view.');
         });
