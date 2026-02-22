@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahjabeen Studio | About Us</title>
+    <!-- Fonts & Icons (same) -->
+    <style>
+        /* Include all base styles from bridal.html */
+        /* Plus about-specific */
+        .about-section { padding: 80px 0; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-image img { width: 100%; border-radius: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: fadeInUp 0.6s ease; }
+        .about-content { animation: fadeInUp 0.6s 0.2s ease forwards; opacity: 0; }
+        .about-content h1 { font-size: 48px; margin-bottom: 20px; }
+        .about-content p { margin-bottom: 20px; color: var(--text-light); font-size: 16px; }
+        .signature { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--gold); margin-top: 30px; }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar, Header, Sticky WA -->
+    <div class="top-bar">...</div>
+    <a href="https://wa.me/923001234567" class="sticky-wa"><i class="fab fa-whatsapp"></i></a>
+    <header>...</header>
+
+    <!-- About Content -->
+    <div class="container about-section">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/800x1000/decbb7/ffffff?text=Mahjabeen+Studio+Story" alt="About Mahjabeen Studio">
+            </div>
+            <div class="about-content">
+                <h1>Our Story</h1>
+                <p>Mahjabeen Studio was born from a passion for celebrating Pakistani women's elegance on their most special days. Founded in Lahore, we specialize in creating timeless bridal, valima, and formal wear that blends traditional craftsmanship with contemporary design.</p>
+                <p>Every piece is handcrafted with love, using the finest fabrics and intricate embroidery. We believe that every woman deserves to feel like a queen, and our team works closely with each client to bring their vision to life.</p>
+                <p>From intimate gatherings to grand weddings, Mahjabeen Studio is honored to be part of your journey. We invite you to explore our collections and experience luxury stitched just for you.</p>
+                <div class="signature">— Mahjabeen</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>...</footer>
+</body>
+</html>
