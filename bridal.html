@@ -4,254 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahjabeen Studio | Bridal Collection</title>
-    <!-- Fonts & Icons -->
+    <!-- Fonts & Icons (same as index) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ---------- RESET & VARIABLES (same as index) ---------- */
+        /* Copy all styles from index.html */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.5px; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        :root {
-            --beige: #E6D5B8;
-            --gold: #B88B4A;
-            --blush: #F8E0E0;
-            --white: #FFFFFF;
-            --light-beige: #F5EDE0;
-            --text-dark: #3A3A3A;
-            --text-light: #6B6B6B;
-        }
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        /* Header & Footer (same as index) */
-        .top-bar { background: var(--beige); color: var(--text-dark); padding: 8px 0; font-size: 14px; text-align: center; border-bottom: 1px solid var(--gold); }
-        header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05); padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        :root { --beige: #f8f0e7; --gold: #d4af37; --blush: #f9e0e0; --white: #ffffff; --soft-pink: #fadadd; --text-dark: #2e2e2e; }
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--text-dark); text-decoration: none; line-height: 1.2; text-align: center; }
-        .logo a { color: var(--text-dark); text-decoration: none; }
-        .logo span { color: var(--gold); font-weight: 700; }
-        .logo small { display: block; font-size: 12px; letter-spacing: 3px; color: var(--gold); }
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--text-dark); text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--gold); }
         nav ul { display: flex; list-style: none; gap: 30px; }
-        nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 16px; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
-        nav a:hover, nav a.active { color: var(--gold); }
-        .header-icons { display: flex; gap: 20px; }
-        .header-icons a { color: var(--text-dark); font-size: 18px; transition: color 0.3s; }
-        .header-icons a:hover { color: var(--gold); }
+        nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--gold); }
         .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
-        /* Buttons */
-        .btn { display: inline-block; background: var(--gold); color: white; padding: 12px 30px; text-decoration: none; font-weight: 500; transition: all 0.3s; border: 2px solid var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 14px; }
-        .btn:hover { background: transparent; color: var(--gold); transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
-        .btn-outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
-        .btn-outline:hover { background: var(--gold); color: white; }
-        .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; border: none; transition: transform 0.3s, box-shadow 0.3s; }
-        .btn-wa:hover { transform: scale(1.05); box-shadow: 0 5px 10px rgba(37,211,102,0.3); }
-        /* Sticky WhatsApp */
+        .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
         .sticky-wa { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; transition: transform 0.3s; text-decoration: none; }
-        .sticky-wa:hover { transform: scale(1.1) rotate(5deg); }
-        /* Page Header */
-        .page-header { background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://via.placeholder.com/1920x400/decbb7/ffffff?text=Bridal+Collection') center/cover no-repeat; padding: 80px 0; text-align: center; color: white; }
-        .page-header h1 { font-size: 56px; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
-        .page-header p { font-size: 20px; font-weight: 300; }
-        /* Product Grid */
-        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 60px 0; }
-        .product-card { background: var(--white); box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: all 0.4s; text-align: center; border-radius: 0; overflow: hidden; opacity: 0; animation: fadeInUp 0.6s ease forwards; }
-        .product-card:nth-child(2) { animation-delay: 0.1s; }
-        .product-card:nth-child(3) { animation-delay: 0.2s; }
-        .product-card:nth-child(4) { animation-delay: 0.3s; }
-        .product-card:nth-child(5) { animation-delay: 0.4s; }
-        .product-card:nth-child(6) { animation-delay: 0.5s; }
-        .product-card:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.15); transform: translateY(-8px); }
-        .product-card img { width: 100%; height: 350px; object-fit: cover; transition: transform 0.5s; }
-        .product-card:hover img { transform: scale(1.05); }
-        .product-info { padding: 20px; }
-        .product-info h3 { font-size: 22px; margin-bottom: 5px; color: var(--text-dark); }
-        .product-category { color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .product-price { font-size: 20px; color: var(--text-dark); font-weight: 600; margin: 10px 0; }
-        .product-price span { color: var(--gold); }
-        /* Footer (same as index) */
-        footer { background: var(--text-dark); color: white; padding: 60px 0 30px; margin-top: 60px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
-        .footer-col h4 { color: var(--gold); margin-bottom: 20px; font-size: 18px; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 10px; }
-        .footer-col a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-col a:hover { color: var(--gold); }
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-links a { color: white; font-size: 20px; transition: transform 0.3s; }
-        .social-links a:hover { transform: translateY(-3px); color: var(--gold); }
-        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid #444; color: #aaa; font-size: 14px; }
-        /* Responsive */
-        @media (max-width: 1024px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+        .sticky-wa:hover { transform: scale(1.1); }
+        footer { background: var(--text-dark); color: white; padding: 40px 0; text-align: center; }
+        .social-links a { color: white; margin: 0 10px; font-size: 20px; transition: color 0.3s; }
+        .social-links a:hover { color: var(--gold); }
+        .section { padding: 60px 0; }
+        .section-title { text-align: center; font-size: 42px; margin-bottom: 50px; color: var(--text-dark); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-card img { width: 100%; height: 350px; object-fit: cover; }
+        .product-info { padding: 20px; text-align: center; }
+        .product-info h3 { font-size: 22px; margin-bottom: 5px; }
+        .product-price { color: var(--gold); font-weight: 600; margin: 10px 0; font-size: 18px; }
         @media (max-width: 768px) {
             nav ul { display: none; }
             .menu-toggle { display: block; }
-            .product-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-            .page-header h1 { font-size: 36px; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            Free Shipping on Orders Above PKR 10,000 | WhatsApp Orders Only
-        </div>
-    </div>
+    <a href="https://wa.me/923001234567?text=Hello%20Mahjabeen%20Studio%2C%20I%27m%20interested%20in%20your%20Bridal%20collection." class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- Sticky WhatsApp -->
-    <a href="https://wa.me/923001234567?text=Hello%20Mahjabeen%20Studio%2C%20I'm%20interested%20in%20your%20Bridal%20collection." class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- Header -->
     <header>
         <div class="container header-inner">
-            <div class="logo">
-                <a href="index.html">MAHJABEEN<br><span>STUDIO</span></a>
-                <small>BRIDAL & FORMAL WEAR</small>
-            </div>
+            <div class="logo"><a href="index.html">MAHJABEEN <span>STUDIO</span></a></div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="bridal.html" class="active">Bridal</a></li>
+                    <li><a href="bridal.html">Bridal</a></li>
                     <li><a href="valima.html">Valima</a></li>
                     <li><a href="formal.html">Formal</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-icons">
-                <a href="#"><i class="far fa-heart"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
-            </div>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Bridal Collection</h1>
-            <p>Handcrafted masterpieces for your unforgettable day</p>
-        </div>
-    </section>
-
-    <!-- Product Grid -->
-    <section class="container">
+    <section class="container section">
+        <h2 class="section-title">Bridal Collection</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="https://via.placeholder.com/600x800/decbb7/ffffff?text=Bridal+Gown+1" alt="Bridal Gown">
+                <img src="https://via.placeholder.com/400x500/f9e0e0/cccccc?text=Bridal+Gown+1" alt="Bridal Gown">
                 <div class="product-info">
-                    <span class="product-category">Bridal</span>
                     <h3>Golden Embroidered Lehenga</h3>
-                    <div class="product-price">PKR <span>75,000</span></div>
-                    <a href="product.html?id=1" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 75,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/600x800/e6d5b8/ffffff?text=Bridal+Gown+2" alt="Bridal Gown">
+                <img src="https://via.placeholder.com/400x500/fadadd/cccccc?text=Bridal+Gown+2" alt="Bridal Gown">
                 <div class="product-info">
-                    <span class="product-category">Bridal</span>
                     <h3>Red Velvet Bridal</h3>
-                    <div class="product-price">PKR <span>82,000</span></div>
-                    <a href="product.html?id=2" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 82,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/600x800/f5ede0/ffffff?text=Bridal+Gown+3" alt="Bridal Gown">
+                <img src="https://via.placeholder.com/400x500/f8f0e7/cccccc?text=Bridal+Gown+3" alt="Bridal Gown">
                 <div class="product-info">
-                    <span class="product-category">Bridal</span>
                     <h3>Pastel Pink Lehenga</h3>
-                    <div class="product-price">PKR <span>68,000</span></div>
-                    <a href="product.html?id=3" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 68,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/600x800/decbb7/ffffff?text=Bridal+Gown+4" alt="Bridal Gown">
+                <img src="https://via.placeholder.com/400x500/f9e0e0/cccccc?text=Bridal+Gown+4" alt="Bridal Gown">
                 <div class="product-info">
-                    <span class="product-category">Bridal</span>
                     <h3>Maroon & Gold Sharara</h3>
-                    <div class="product-price">PKR <span>70,000</span></div>
-                    <a href="product.html?id=4" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/600x800/e6d5b8/ffffff?text=Bridal+Gown+5" alt="Bridal Gown">
-                <div class="product-info">
-                    <span class="product-category">Bridal</span>
-                    <h3>Ivory Silk Gown</h3>
-                    <div class="product-price">PKR <span>95,000</span></div>
-                    <a href="product.html?id=5" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/600x800/f5ede0/ffffff?text=Bridal+Gown+6" alt="Bridal Gown">
-                <div class="product-info">
-                    <span class="product-category">Bridal</span>
-                    <h3>Blush Pink Lehenga</h3>
-                    <div class="product-price">PKR <span>88,000</span></div>
-                    <a href="product.html?id=6" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <p class="product-price">PKR 70,000</p>
+                    <a href="product.html" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Mahjabeen Studio</h4>
-                    <p>Premium bridal, valima, and formal wear for the modern Pakistani woman.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="bridal.html">Bridal</a></li>
-                        <li><a href="valima.html">Valima</a></li>
-                        <li><a href="formal.html">Formal</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fab fa-whatsapp"></i> +92 300 1234567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
-                        <li><i class="fas fa-envelope"></i> hello@mahjabeenstudio.com</li>
-                    </ul>
-                </div>
+            <div class="logo" style="color: white; margin-bottom: 20px;">MAHJABEEN STUDIO</div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="copyright">
-                &copy; 2026 Mahjabeen Studio. All rights reserved.
-            </div>
+            <p style="margin-top: 20px;">&copy; 2026 Mahjabeen Studio. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
-            alert('Mobile menu would open here. For demo, please use desktop view.');
+            alert('Mobile menu would open here.');
         });
     </script>
 </body>
