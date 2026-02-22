@@ -4,45 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahjabeen Studio | About Us</title>
-    <!-- Fonts & Icons (same) -->
+    <!-- Fonts, Icons, Styles (copy from bridal.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Include all base styles from bridal.html */
-        /* Plus about-specific */
-        .about-section { padding: 80px 0; }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .about-image img { width: 100%; border-radius: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: fadeInUp 0.6s ease; }
-        .about-content { animation: fadeInUp 0.6s 0.2s ease forwards; opacity: 0; }
-        .about-content h1 { font-size: 48px; margin-bottom: 20px; }
-        .about-content p { margin-bottom: 20px; color: var(--text-light); font-size: 16px; }
-        .signature { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--gold); margin-top: 30px; }
+        /* Copy base styles from bridal.html, plus about specific */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        :root { --beige: #f8f0e7; --gold: #d4af37; --blush: #f9e0e0; --white: #ffffff; --soft-pink: #fadadd; --text-dark: #2e2e2e; }
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--text-dark); text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--gold); }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--gold); }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+        .sticky-wa { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; transition: transform 0.3s; text-decoration: none; }
+        .sticky-wa:hover { transform: scale(1.1); }
+        footer { background: var(--text-dark); color: white; padding: 40px 0; text-align: center; }
+        .social-links a { color: white; margin: 0 10px; font-size: 20px; transition: color 0.3s; }
+        .social-links a:hover { color: var(--gold); }
+        .about-section { padding: 60px 0; }
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-content h1 { font-size: 48px; margin-bottom: 30px; }
+        .about-content p { font-size: 18px; margin-bottom: 20px; color: #555; }
         @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            .menu-toggle { display: block; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar, Header, Sticky WA -->
-    <div class="top-bar">...</div>
-    <a href="https://wa.me/923001234567" class="sticky-wa"><i class="fab fa-whatsapp"></i></a>
-    <header>...</header>
+    <a href="https://wa.me/923001234567?text=Hello%20Mahjabeen%20Studio" class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- About Content -->
-    <div class="container about-section">
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="https://via.placeholder.com/800x1000/decbb7/ffffff?text=Mahjabeen+Studio+Story" alt="About Mahjabeen Studio">
-            </div>
-            <div class="about-content">
-                <h1>Our Story</h1>
-                <p>Mahjabeen Studio was born from a passion for celebrating Pakistani women's elegance on their most special days. Founded in Lahore, we specialize in creating timeless bridal, valima, and formal wear that blends traditional craftsmanship with contemporary design.</p>
-                <p>Every piece is handcrafted with love, using the finest fabrics and intricate embroidery. We believe that every woman deserves to feel like a queen, and our team works closely with each client to bring their vision to life.</p>
-                <p>From intimate gatherings to grand weddings, Mahjabeen Studio is honored to be part of your journey. We invite you to explore our collections and experience luxury stitched just for you.</p>
-                <div class="signature">— Mahjabeen</div>
-            </div>
+    <header>
+        <div class="container header-inner">
+            <div class="logo"><a href="index.html">MAHJABEEN <span>STUDIO</span></a></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bridal.html">Bridal</a></li>
+                    <li><a href="valima.html">Valima</a></li>
+                    <li><a href="formal.html">Formal</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         </div>
-    </div>
+    </header>
 
-    <!-- Footer -->
-    <footer>...</footer>
+    <section class="container about-section">
+        <div class="about-content">
+            <h1>Our Story</h1>
+            <p>Mahjabeen Studio was born from a passion for celebrating Pakistani women's elegance on their most special days. Founded in Lahore, we specialize in creating timeless bridal, valima, and formal wear that blends traditional craftsmanship with contemporary design.</p>
+            <p>Every piece is handcrafted with love, using the finest fabrics and intricate embroidery. We believe that every woman deserves to feel like a queen, and our team works closely with each client to bring their vision to life.</p>
+            <p>From intimate gatherings to grand weddings, Mahjabeen Studio is honored to be part of your journey. We invite you to explore our collections and experience luxury stitched just for you.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo" style="color: white; margin-bottom: 20px;">MAHJABEEN STUDIO</div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p style="margin-top: 20px;">&copy; 2026 Mahjabeen Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            alert('Mobile menu would open here.');
+        });
+    </script>
 </body>
 </html>
