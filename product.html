@@ -1,107 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahjabeen Studio | Golden Embroidered Lehenga</title>
-    <!-- Fonts, Icons, and Styles (copy from bridal.html) -->
+    <title>Product Details | Mahjabeen Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Copy all base styles from bridal.html, plus additional product page specific */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        :root { --beige: #f8f0e7; --gold: #d4af37; --blush: #f9e0e0; --white: #ffffff; --soft-pink: #fadadd; --text-dark: #2e2e2e; }
-        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--text-dark); text-decoration: none; letter-spacing: 2px; }
-        .logo span { color: var(--gold); }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: var(--gold); }
-        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
-        .btn-wa { background: #25D366; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; }
-        .sticky-wa { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; transition: transform 0.3s; text-decoration: none; }
-        .sticky-wa:hover { transform: scale(1.1); }
-        footer { background: var(--text-dark); color: white; padding: 40px 0; text-align: center; }
-        .social-links a { color: white; margin: 0 10px; font-size: 20px; transition: color 0.3s; }
-        .social-links a:hover { color: var(--gold); }
-        .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin: 50px 0; }
-        .product-images img { width: 100%; border-radius: 8px; }
-        .thumbnails { display: flex; gap: 10px; margin-top: 10px; }
-        .thumbnails img { width: 80px; height: 80px; object-fit: cover; cursor: pointer; border-radius: 4px; }
-        .product-info h1 { font-size: 36px; margin-bottom: 10px; }
-        .price { font-size: 28px; color: var(--gold); margin: 20px 0; }
-        .description { margin: 30px 0; line-height: 1.8; }
-        @media (max-width: 768px) {
-            .product-detail { grid-template-columns: 1fr; }
-            nav ul { display: none; }
-            .menu-toggle { display: block; }
+        .product-section {
+            padding: 5rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-info h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-family: var(--font-heading);
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .product-features {
+            margin-bottom: 3rem;
+        }
+
+        .product-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-features i {
+            color: var(--gold-primary);
+        }
+
+        @media (max-width: 900px) {
+            .product-section {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 500px;
+            }
         }
     </style>
 </head>
-<body>
-    <a href="https://wa.me/923001234567?text=I'm%20interested%20in%20Golden%20Embroidered%20Lehenga%20(PKR%2075,000)" class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo"><a href="index.html">MAHJABEEN <span>STUDIO</span></a></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bridal.html">Bridal</a></li>
-                    <li><a href="valima.html">Valima</a></li>
-                    <li><a href="formal.html">Formal</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-container">
+                <div class="logo-text">Mahjabeen <span>Studio</span></div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="bridal.html">Bridal</a>
+                <a href="valima.html">Valima</a>
+                <a href="formal.html">Formal</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <a href="https://wa.me/923001234567" target="_blank" class="btn btn-outline"
+                style="display: flex; gap: 8px; align-items: center;">
+                <i class="fab fa-whatsapp"></i> Order Now
+            </a>
         </div>
     </header>
 
-    <main class="container">
-        <div class="product-detail">
-            <div class="product-images">
-                <img id="mainImage" src="https://via.placeholder.com/600x800/f9e0e0/cccccc?text=Bridal+Gown+1" alt="Product">
-                <div class="thumbnails">
-                    <img src="https://via.placeholder.com/150x200/f9e0e0/cccccc?text=View+1" onclick="document.getElementById('mainImage').src=this.src">
-                    <img src="https://via.placeholder.com/150x200/fadadd/cccccc?text=View+2" onclick="document.getElementById('mainImage').src=this.src">
-                    <img src="https://via.placeholder.com/150x200/f8f0e7/cccccc?text=View+3" onclick="document.getElementById('mainImage').src=this.src">
-                </div>
+    <div class="container">
+        <section class="product-section">
+            <div class="fade-up">
+                <img src="https://images.unsplash.com/photo-1594912959663-956dfa995fc1?q=80&w=1200&auto=format&fit=crop"
+                    alt="Premium Dress" class="product-image" id="prod-img">
             </div>
-            <div class="product-info">
-                <h1>Golden Embroidered Lehenga</h1>
-                <div class="price">PKR 75,000</div>
-                <div class="description">
-                    <p>Exquisite bridal lehenga in rich gold with intricate embroidery and resham work. Features a heavy dupatta and detailed blouse. Perfect for your special day.</p>
-                    <p>Fabric: Raw Silk with Zari embroidery<br>Custom stitching available</p>
+            <div class="product-info fade-up" style="transition-delay: 0.2s;">
+                <h1 id="prod-title">Zoya Heritage Lehenga</h1>
+                <p class="product-price" id="prod-price">PKR 350,000</p>
+                <div class="product-description" id="prod-desc">
+                    <p>A masterpiece of traditional craftsmanship meeting modern luxury. This exquisite dress features
+                        intricate hand-embellished zardozi work, delicate pearls, and shimmering sequins on premium
+                        fabric. Perfect for your most memorable moments.</p>
                 </div>
-                <a href="https://wa.me/923001234567?text=I'm%20interested%20in%20Golden%20Embroidered%20Lehenga%20(PKR%2075,000)" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> 100% Pure Raw Silk fabric</li>
+                    <li><i class="fas fa-check"></i> Intricate hand embroidery</li>
+                    <li><i class="fas fa-check"></i> Custom sizing available</li>
+                    <li><i class="fas fa-check"></i> Premium stitched inner lining</li>
+                </ul>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" id="wa-btn" target="_blank" class="btn btn-whatsapp"
+                        style="font-size: 1.2rem; padding: 1rem 2.5rem;">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;"><i class="fas fa-info-circle"></i> Reach
+                    out on WhatsApp with your custom measurements and requirements.</p>
             </div>
-        </div>
-    </main>
+        </section>
+    </div>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo" style="color: white; margin-bottom: 20px;">MAHJABEEN STUDIO</div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-text" style="color: white; margin-bottom: 1rem;">Mahjabeen <span
+                            style="color: var(--crimson-red);">Studio</span></div>
+                    <p>Premium Pakistani women's fashion and bridal boutique, delivering elegance crafted with
+                        perfection.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--gold-primary);"></i>
+                        Lahore, Pakistan</p>
+                    <p><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold-primary);"></i> +92 300
+                        1234567</p>
+                </div>
             </div>
-            <p style="margin-top: 20px;">&copy; 2026 Mahjabeen Studio. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mahjabeen Studio. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            alert('Mobile menu would open here.');
-        });
+        // Simple script to swap details based on query param for demo purposes
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        const products = {
+            'b1': { title: 'Zoya Heritage Lehenga', price: 'PKR 350,000', img: 'https://images.unsplash.com/photo-1594912959663-956dfa995fc1?q=80&w=1200' },
+            'b2': { title: 'Aayat Crimson Set', price: 'PKR 420,000', img: 'https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1200' },
+            'b3': { title: 'Noor Golden Gown', price: 'PKR 380,000', img: 'https://images.unsplash.com/photo-1620216447833-289b5321fcee?q=80&w=1200' },
+            'v1': { title: 'Pastel Dream', price: 'PKR 250,000', img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200' },
+            'v2': { title: 'Silver Jubilee Formals', price: 'PKR 220,000', img: 'https://images.unsplash.com/photo-1625211915446-0b1a030de45f?q=80&w=1200' },
+            'f1': { title: 'Midnight Onyx', price: 'PKR 150,000', img: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=1200' },
+            'f2': { title: 'Rosewater Elegance', price: 'PKR 180,000', img: 'https://images.unsplash.com/photo-1550639524-c67d455acf70?q=80&w=1200' }
+        };
+
+        if (id && products[id]) {
+            document.getElementById('prod-title').innerText = products[id].title;
+            document.getElementById('prod-price').innerText = products[id].price;
+            document.getElementById('prod-img').src = products[id].img;
+            document.getElementById('wa-btn').href = `https://wa.me/923001234567?text=Hi! I am interested in ordering the ${products[id].title} (${products[id].price}).`;
+            document.title = `${products[id].title} | Mahjabeen Studio`;
+        } else {
+            document.getElementById('wa-btn').href = `https://wa.me/923001234567?text=Hi! I am interested in ordering the Zoya Heritage Lehenga (PKR 350,000).`;
+        }
     </script>
 </body>
+
 </html>
