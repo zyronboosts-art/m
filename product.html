@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahjabeen Studio | Golden Embroidered Lehenga</title>
+    <!-- Fonts & Icons (same) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Same base styles as before, plus product-specific */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.5px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        :root {
+            --beige: #E6D5B8;
+            --gold: #B88B4A;
+            --blush: #F8E0E0;
+            --white: #FFFFFF;
+            --light-beige: #F5EDE0;
+            --text-dark: #3A3A3A;
+            --text-light: #6B6B6B;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeInUp 0.6s ease forwards; }
+        /* Header, Footer, Buttons (copy from bridal.html) */
+        /* ... (include all header/footer/button styles from bridal.html) ... */
+        /* Product Detail */
+        .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin: 60px 0; }
+        .product-images { animation: fadeInUp 0.6s ease; }
+        .main-image { width: 100%; height: 500px; object-fit: cover; border: 1px solid var(--beige); }
+        .thumbnail-grid { display: flex; gap: 10px; margin-top: 15px; }
+        .thumbnail { width: 80px; height: 80px; object-fit: cover; cursor: pointer; border: 1px solid transparent; transition: border 0.3s; }
+        .thumbnail:hover { border-color: var(--gold); }
+        .product-info { animation: fadeInUp 0.6s 0.2s ease forwards; opacity: 0; }
+        .product-info h1 { font-size: 42px; margin-bottom: 10px; }
+        .product-category { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+        .price { font-size: 32px; color: var(--gold); margin: 20px 0; font-weight: 600; }
+        .description { margin: 30px 0; line-height: 1.8; color: var(--text-light); }
+        .product-meta { margin: 30px 0; padding: 20px 0; border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige); }
+        .meta-item { display: flex; margin-bottom: 10px; }
+        .meta-label { width: 120px; font-weight: 600; }
+        .btn-wa-large { background: #25D366; color: white; padding: 15px 40px; font-size: 18px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: transform 0.3s; }
+        .btn-wa-large:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-detail { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar, Header, Sticky WA (same) -->
+    <div class="top-bar">...</div>
+    <a href="https://wa.me/923001234567" class="sticky-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <header>...</header>
+
+    <!-- Product Detail -->
+    <div class="container product-detail">
+        <div class="product-images">
+            <img id="mainImage" class="main-image" src="https://via.placeholder.com/800x1000/decbb7/ffffff?text=Bridal+Gown" alt="Product">
+            <div class="thumbnail-grid">
+                <img class="thumbnail" src="https://via.placeholder.com/150x200/decbb7/ffffff?text=1" onclick="document.getElementById('mainImage').src=this.src">
+                <img class="thumbnail" src="https://via.placeholder.com/150x200/e6d5b8/ffffff?text=2" onclick="document.getElementById('mainImage').src=this.src">
+                <img class="thumbnail" src="https://via.placeholder.com/150x200/f5ede0/ffffff?text=3" onclick="document.getElementById('mainImage').src=this.src">
+                <img class="thumbnail" src="https://via.placeholder.com/150x200/f8e0e0/ffffff?text=4" onclick="document.getElementById('mainImage').src=this.src">
+            </div>
+        </div>
+        <div class="product-info">
+            <span class="product-category">Bridal</span>
+            <h1>Golden Embroidered Lehenga</h1>
+            <div class="price">PKR 75,000</div>
+            <div class="description">
+                <p>Exquisite bridal lehenga in rich gold with intricate embroidery and resham work. Features a heavy dupatta and detailed blouse. Perfect for your special day.</p>
+                <p>Fabric: Raw Silk with Zari embroidery<br>Custom stitching available</p>
+            </div>
+            <div class="product-meta">
+                <div class="meta-item"><span class="meta-label">SKU:</span> MS-B001</div>
+                <div class="meta-item"><span class="meta-label">Category:</span> Bridal</div>
+                <div class="meta-item"><span class="meta-label">Customization:</span> Available (via WhatsApp)</div>
+            </div>
+            <a href="https://wa.me/923001234567?text=I'm%20interested%20in%20Golden%20Embroidered%20Lehenga%20(PKR%2075,000)" class="btn-wa-large" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>...</footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() { alert('Mobile menu'); });
+    </script>
+</body>
+</html>
